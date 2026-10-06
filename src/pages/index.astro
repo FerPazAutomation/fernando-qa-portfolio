@@ -812,6 +812,7 @@ const copy = {
 		position: relative;
 		z-index: 1;
 		width: 100%;
+		height: auto;
 		aspect-ratio: 1;
 		object-fit: cover;
 		border-radius: 50%;
@@ -964,14 +965,35 @@ const copy = {
 		border-bottom: 0;
 	}
 
+	:global(.project-card) {
+		display: flex;
+		flex-direction: column;
+	}
+
+	:global(.project-card .tags) {
+		margin-bottom: 1.25rem;
+	}
+
 	:global(.project-card a) {
-		color: #2563eb;
+		margin-top: auto;
+		align-self: flex-start;
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
+		padding: 0.55rem 1rem;
+		border-radius: 999px;
+		border: 1px solid #bfdbfe;
+		background: #eff6ff;
+		color: #1d4ed8;
 		font-weight: 700;
+		font-size: 0.9rem;
 		text-decoration: none;
+		transition: background 160ms ease, color 160ms ease;
 	}
 
 	:global(.project-card a:hover) {
-		text-decoration: underline;
+		background: #2563eb;
+		color: #fff;
 	}
 
 	.cv-block {
@@ -1063,9 +1085,17 @@ const copy = {
 			grid-template-columns: 1fr;
 		}
 
+		.topbar {
+			position: static;
+		}
+
 		.topbar-inner {
 			flex-direction: column;
 			align-items: stretch;
+		}
+
+		.lang {
+			align-self: flex-start;
 		}
 
 		.nav {
